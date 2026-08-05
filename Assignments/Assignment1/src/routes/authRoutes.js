@@ -7,7 +7,7 @@ const ValidationMiddleware = require("../middleware/ValidationMiddleware");
 const {
   registrationValidationSchema,
   loginValidationSchema,
-} = require("../validationSchema/AuthValidationSchema");
+} = require("../../validationSchema/AuthValidationSchema");
 
 const {
   register,
@@ -18,14 +18,10 @@ const {
 router.post(
   "/register",
   ValidationMiddleware(registrationValidationSchema),
-  register
+  register,
 );
 
-router.post(
-  "/login",
-  ValidationMiddleware(loginValidationSchema),
-  login
-);
+router.post("/login", ValidationMiddleware(loginValidationSchema), login);
 
 router.post("/logout", logout);
 
