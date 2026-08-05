@@ -1,0 +1,108 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+article {
+    width: 40vw;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid lightgray;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+#profileDetails {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding: 20px 0;
+}
+
+#profileDetails img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgb(55, 102, 189);
+}
+
+#profileDetails img:hover {
+    width: 150px;
+    height: 150px;
+    transition: 1s;
+}
+
+#profileDetails #profileTitle h2 {
+    color: rgb(69, 69, 69);
+    padding: 10px 0;
+}
+
+#profileDetails #profileTitle p {
+    color: rgb(55, 102, 189);
+}
+
+#bio {
+    padding: 20px 0;
+    color: rgb(141, 141, 141);
+}
+
+.skillSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.skillSection h2 {
+    color: rgb(81, 81, 81);
+}
+
+.skillSection ul {
+    padding: 20px 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skillSection ul li {
+    color: rgb(27, 65, 136);
+    border: 1px solid rgb(149, 178, 230);
+    border-radius: 20px;
+    padding: 10px;
+    width: auto;
+    overflow: hidden;
+    background-color: rgb(211, 227, 255);
+}
+
+#profileFooter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#profileFooter a {
+    text-decoration: none;
+    background-color: rgb(55, 102, 189);
+    color: white;
+    border-radius: 7px;
+    padding: 10px;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+#profileFooter a:hover {
+    background-color: rgb(40, 77, 146);
+    transition: 1s;
+}

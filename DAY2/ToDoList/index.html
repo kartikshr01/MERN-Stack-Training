@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <h1>TO DO LIST</h1>
+        <div class="inputContainer">
+            <input type="text" name="taskInput" id="taskInput">
+            <button class="button" onclick="addTask()">ADD TASK</button>
+        </div>
+        <div class="taskListContainer">
+            <div class="tasksPending" id="tasksPending">
+                <h3>TASKS PENDING</h3>
+                <div class="tasksPendingDiv"  id="tasksPendingDiv"></div>
+            </div>
+            <div class="tasksCompleted" id="tasksCompleted">
+                <h3>TASKS COMPLETED</h3>
+                <div class="tasksCompletedDiv" id="tasksCompletedDiv"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

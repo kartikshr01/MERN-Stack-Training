@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="mainSignupContainer">
+
+        <div class="leftSection">
+            <img src="images/landscape-windows-3840x2400-10175.jpg" alt="Landscape">
+            <p>
+                Capturing Moments,<br>
+                Creating Memories
+            </p>
+        </div>
+
+        <div class="rightSection">
+
+            <h2 id="registrationFromHeading">Create an Account</h2>
+            <p>Already have an account? <a href="#">Log in</a></p>
+
+            <form>
+
+                <div id="formNameSection">
+                    <input type="text" id="firstName" placeholder="First Name" required>
+
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                </div>
+
+                <input type="email" id="email" placeholder="Email Address" required>
+
+                <input type="password" id="password" placeholder="Password" required>
+
+                <div id="checkboxElement">
+                    <input type="checkbox" id="termsAndConditions" required>
+
+                    <label for="termsAndConditions">
+                        I agree to the
+                        <a href="#">Terms &amp; Conditions</a>
+                    </label>
+                </div>
+
+                <button type="submit">
+                    Create Account
+                </button>
+
+            </form>
+            <div class="socialLogin">
+
+                <div class="divider">
+                    <span>Or sign up with</span>
+                </div>
+
+                <div class="signupButtons">
+                    <button class="socialBtn googleBtn">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                            alt="Google">
+                        Google
+                    </button>
+
+                    <button class="socialBtn appleBtn">
+                        <img src="https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png"
+                            alt="Apple">
+                        Apple
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

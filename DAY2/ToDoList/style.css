@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #4d8dcc, #ffffff);
+}
+
+.mainContainer {
+    width: 600px;
+    max-width: 90%;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.mainContainer h1 {
+    text-align: center;
+}
+
+.inputContainer {
+    margin: 20px 0;
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    font-size: 15px;
+    padding: 10px 15px;
+    border: 1px solid rgb(27, 65, 136);
+    border-radius: 10px;
+    outline: none;
+}
+
+input[type="text"]:hover {
+    border: 1px solid rgb(19, 41, 81);
+    outline: none;
+}
+
+.button {
+    color: rgb(27, 65, 136);
+    border: 1px solid rgb(149, 178, 230);
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(211, 227, 255);
+    cursor: pointer;
+    width: 150px;
+    white-space: nowrap;
+}
+
+.taskListContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+.tasksPendingDiv,
+.tasksCompletedDiv {
+    height: 200px;
+    overflow-y: auto;
+    background-color: #e6f2ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.tasksPending,
+.tasksCompleted {
+    margin-top: 20px;
+} 
+
+.task {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task p {
+    background-color: #f5faff;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    word-break: break-word;
+}
+
+.doneBtn {
+    color: rgb(27,136,54);
+    border: 1px solid rgb(150,230,149);
+    border-radius: 20px;
+    padding: 8px 12px;
+    background: rgb(213,255,211);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.deleteBtn {
+    color: rgb(136,27,27);
+    border: 1px solid rgb(230,149,149);
+    border-radius: 20px;
+    padding: 8px 12px;
+    background: rgb(255,236,236);
+    cursor: pointer;
+    white-space: nowrap;
+}

@@ -1,0 +1,214 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#837c90;
+}
+
+.mainSignupContainer{
+    width:70%;
+    max-width:1100px;
+    background:#3c3846;
+    border-radius:15px;
+    overflow:hidden;
+    display:flex;
+    margin: 70px 0;
+    box-shadow:0 0 25px rgba(0,0,0,.5);
+}
+
+.leftSection{
+    width:50%;
+    position:relative;
+}
+
+.leftSection img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    padding: 10px 0 10px 10px;
+    border-radius: 15px;
+}
+
+.leftSection::after{
+    content:"";
+    position:absolute;
+    inset:0;
+}
+
+.leftSection p{
+    position:absolute;
+    bottom:40px;
+    left: 50px;
+    color:white;
+    font-size:30px;
+    font-weight:300;
+    line-height:1.4;
+    z-index:2;
+}
+
+.rightSection{
+    width:50%;
+    padding:45px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+#registrationFromHeading{
+    color:white;
+    font-size:36px;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.rightSection p {
+    text-align: left;
+    margin-bottom: 20px;
+    color: rgb(135, 135, 135);
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+#formNameSection{
+    width:100%;
+    display:flex;
+    gap:15px;
+}
+
+#formNameSection input{
+    flex:1;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin-bottom:18px;
+    border:none;
+    border-radius:10px;
+    background:#555062;
+    color:white;
+    font-size:15px;
+}
+
+input::placeholder{
+    color:#d6d6d6;
+}
+
+input:focus{
+    outline:none;
+    border:2px solid #6b4cff;
+}
+
+#checkboxElement{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:10px 0 25px;
+    color:white;
+    font-size:14px;
+}
+
+#checkboxElement input{
+    width:auto;
+    margin:0;
+}
+
+a {
+    color:#8f78ff;
+    text-decoration:none;
+}
+
+a:hover {
+    text-decoration:underline;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#6b4cff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#5638e2;
+}
+
+.socialLogin{
+    margin-top:25px;
+}
+
+.divider{
+    display:flex;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#5a5568;
+}
+
+.divider span{
+    padding:0 15px;
+    color:#bdbdbd;
+    font-size:14px;
+}
+
+.signupButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.socialBtn{
+    width:50%;
+    padding:13px;
+    border:1px solid #5a5568;
+    border-radius:10px;
+    background:#4a4557;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+    margin-bottom:12px;
+}
+
+.socialBtn:hover{
+    background:#5a5568;
+}
+
+.socialBtn img{
+    width:22px;
+    height:22px;
+}
+
+.appleLogo{
+    font-size:22px;
+    font-weight:bold;
+}
