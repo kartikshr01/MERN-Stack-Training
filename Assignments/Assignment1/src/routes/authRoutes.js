@@ -7,7 +7,7 @@ const ValidationMiddleware = require("../middleware/ValidationMiddleware");
 const {
   registrationValidationSchema,
   loginValidationSchema,
-} = require("../../validationSchema/AuthValidationSchema");
+} = require("../validationSchema/AuthValidationSchema");
 
 const {
   register,
