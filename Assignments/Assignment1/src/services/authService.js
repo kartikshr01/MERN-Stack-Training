@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 
 const { AuthModel } = require("../models");
 
-const registerUser = async ({ username, email, password }) => {
+const registerUser = async ({ username, role, email, password }) => {
   const existingUser = await AuthModel.findOne({ email });
 
   if (existingUser) {
@@ -14,6 +14,7 @@ const registerUser = async ({ username, email, password }) => {
 
   const newUser = await AuthModel.create({
     username,
+    role,
     email,
     password: hashedPassword,
   });

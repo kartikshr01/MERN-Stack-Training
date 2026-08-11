@@ -9,6 +9,14 @@ const authSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    role: {
+      type: String,
+      enum: ["user","seller","admin"],
+      minLength: 2,
+      maxLength: 128,
+      required: true,
+      trim: true,
+    },
     email: {
       type: String,
       minLength: 12,
@@ -31,6 +39,20 @@ const authSchema = new mongoose.Schema(
     strict: true,
   },
 );
+
+authSchema.virtual("address",{
+  ref:"Address",
+  localField: "_id",
+  foreignField: "user"
+});
+
+authSchema.set("toJSON", {
+  virtuals: true,
+});
+
+authSchema.set("toObject", {
+  virtuals: true,
+})
 
 const AuthModel = mongoose.model("Credentials", authSchema);
 

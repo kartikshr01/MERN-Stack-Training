@@ -2,6 +2,7 @@ const joi = require("joi");
 
 const registrationValidationSchema = joi.object({
   username: joi.string().required().min(2).max(128),
+  role: joi.string().required().min(2).max(128),
   email: joi.string().email().required().min(2).max(128),
   password: joi.string().required().min(8).max(128),
 });
