@@ -1,6 +1,6 @@
 const reviewService = require("../services/reviewService");
 
-const createReview = async (req, res) => {
+const createReview = async (req, res, next) => {
   try {
     const review = await reviewService.createReview(req.body);
 
@@ -10,14 +10,11 @@ const createReview = async (req, res) => {
       data: review,
     });
   } catch (err) {
-    res.status(400).json({
-      success: false,
-      message: err.message,
-    });
+    next(err);
   }
 };
 
-const getReviews = async (req, res) => {
+const getReviews = async (req, res, next) => {
   try {
     const reviews = await reviewService.getReviews(req.query);
 
@@ -27,14 +24,11 @@ const getReviews = async (req, res) => {
       data: reviews,
     });
   } catch (err) {
-    res.status(500).json({
-      success: false,
-      message: err.message,
-    });
+    next(err);
   }
 };
 
-const getSingleReview = async (req, res) => {
+const getSingleReview = async (req, res, next) => {
   try {
     const review = await reviewService.getSingleReview(req.params);
 
@@ -44,14 +38,11 @@ const getSingleReview = async (req, res) => {
       data: review,
     });
   } catch (err) {
-    res.status(404).json({
-      success: false,
-      message: err.message,
-    });
+    next(err);
   }
 };
 
-const updateReview = async (req, res) => {
+const updateReview = async (req, res, next) => {
   try {
     const review = await reviewService.updateReview(
       req.params,
@@ -64,14 +55,11 @@ const updateReview = async (req, res) => {
       data: review,
     });
   } catch (err) {
-    res.status(404).json({
-      success: false,
-      message: err.message,
-    });
+    next(err);
   }
 };
 
-const deleteReview = async (req, res) => {
+const deleteReview = async (req, res, next) => {
   try {
     const review = await reviewService.deleteReview(req.params);
 
@@ -81,10 +69,7 @@ const deleteReview = async (req, res) => {
       data: review,
     });
   } catch (err) {
-    res.status(404).json({
-      success: false,
-      message: err.message,
-    });
+    next(err);
   }
 };
 

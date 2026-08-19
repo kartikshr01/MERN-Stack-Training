@@ -1,6 +1,6 @@
 const express = require("express");
 
-const reviewController = require("../controller/reviewController");
+const reviewController = require("../controllers/reviewController");
 
 const validationMiddleware = require("../middlewares/validationMiddleware");
 
