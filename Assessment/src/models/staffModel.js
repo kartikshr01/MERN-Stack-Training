@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { applyTimestamps } = require("./reviewModel");
+const bcrypt = require("bcrypt");
 
 const staffSchema = mongoose.Schema(
   {
@@ -34,5 +34,18 @@ const staffSchema = mongoose.Schema(
     strict: true,
   },
 );
+
+staffSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    return next();
+  }
+
+  try {
+    this.password = await bcrypt.hash(this.password, 10);
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = mongoose.model("staff", staffSchema);

@@ -23,12 +23,16 @@ const createReview = async (data) => {
 };
 
 const getReviews = async (queryParams) => {
-  const { status, page = 1, limit = 10 } = queryParams;
+  const { status, minRating, page = 1, limit = 10 } = queryParams;
 
   const filter = {};
 
   if (status) {
     filter.status = status;
+  }
+
+  if (minRating) {
+    filter.rating = { $gte: minRating };
   }
 
   const reviews = await ReviewModel.find(filter)
@@ -38,7 +42,58 @@ const getReviews = async (queryParams) => {
   return reviews;
 };
 
+const getSingleReview = async (queryParams) => {
+  const { id } = queryParams;
+
+  const review = await ReviewModel.findById(id);
+
+  if (!review) {
+    throw new Error("Review with the given ID not found.");
+  }
+
+  return review;
+};
+
+const updateReview = async (queryParams, body) => {
+  const { id } = queryParams;
+
+  const review = await ReviewModel.findById(id);
+
+  if (!review) {
+    throw new Error("Review with the provided ID not found.");
+  }
+
+  const { title, comment, rating, reviewerName } = body;
+
+  if (title !== undefined) review.title = title;
+  if (comment !== undefined) review.comment = comment;
+  if (rating !== undefined) review.rating = rating;
+  if (reviewerName !== undefined) review.reviewerName = reviewerName;
+
+  await review.save();
+
+  return review;
+};
+
+const deleteReview = async (queryParams) => {
+  const { id } = queryParams;
+
+  const review = await ReviewModel.findByIdAndDelete(id);
+
+  if (!review) {
+    throw new Error("Review with the given ID not found.");
+  }
+
+  return {
+    message: "Deleted the review successfully.",
+    review,
+  };
+};
+
 module.exports = {
   createReview,
   getReviews,
+  getSingleReview,
+  updateReview,
+  deleteReview,
 };
