@@ -1,0 +1,1 @@
+TypeScript is a syntactic superset of JavaScript that adds optional static typing. It catches type-related mistakes while you write code before it runs.
