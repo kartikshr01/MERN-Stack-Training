@@ -10,6 +10,7 @@ const staffSchema = mongoose.Schema(
       minLength: 2,
       maxLength: 50,
     },
+
     email: {
       type: String,
       required: true,
@@ -17,12 +18,13 @@ const staffSchema = mongoose.Schema(
       unique: true,
       lowercase: true,
     },
+
     password: {
       type: String,
       required: true,
-      trim: true,
       minLength: 6,
     },
+
     department: {
       type: String,
       required: true,
@@ -32,20 +34,15 @@ const staffSchema = mongoose.Schema(
   {
     timestamps: true,
     strict: true,
-  },
+  }
 );
 
-staffSchema.pre("save", async function (next) {
+staffSchema.pre("save", async function () {
   if (!this.isModified("password")) {
-    return next();
+    return;
   }
 
-  try {
-    this.password = await bcrypt.hash(this.password, 10);
-    next();
-  } catch (error) {
-    next(error);
-  }
+  this.password = await bcrypt.hash(this.password, 10);
 });
 
 module.exports = mongoose.model("staff", staffSchema);

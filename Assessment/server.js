@@ -4,12 +4,14 @@ const app = express();
 const cookieParser = require("cookie-parser");
 
 const reviewRouter = require("./src/routes/review.route");
+const staffRouter = require("./src/routes/staff.route");
 const connectDB = require("./src/config/db");
 
 app.use(express.json());
 app.use(cookieParser());
 
 app.use("/review", reviewRouter);
+app.use("/staff", staffRouter);
 
 const {
   notFound,
